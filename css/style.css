@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+body {
+  margin: 0;
+}
+
 body {
 display: grid;
 grid-template-areas:
 "header header header"
-"nav main ads"
+"nav main main"
 "footer footer footer";
-grid-template-rows: 60px 1fr 60px;
+grid-template-rows: 80px 1fr 60px;
 grid-template-columns: 25% 1fr 15%;
 grid-gap: 10px;
 height: 100vh;
 margin: 0;
 }
-header, footer, main, nav, div {
+header, footer, main, nav {
 padding: 20px;
 background: antiquewhite;
+font-family: 'Ubuntu', sans-serif;
 }
 #pageHeader {
 grid-area: header;
@@ -26,9 +32,6 @@ grid-area: main;
 #mainNav {
 grid-area: nav;
 }
-#siteAds {
-grid-area: ads;
-}
 
 /* Stack the layout on small devices/viewports. */
 @media all and (max-width: 575px) {
@@ -36,7 +39,6 @@ grid-area: ads;
     grid-template-areas:
     "header"
     "main"
-    "ads"
     "nav"
     "footer";
     grid-template-rows: 80px 1fr 70px 70px 70px;
@@ -44,6 +46,9 @@ grid-area: ads;
     }
     }
 
+
+
+/* Form */
 
 .myForm {
         display: grid;
@@ -74,5 +79,40 @@ grid-area: ads;
         padding: 1em;
         background: darkkhaki;
         border: 0;
-        color: white;
+        color: rgb(255, 255, 255);
         }
+
+/* header */
+ header {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: auto;
+            grid-gap: 1em;
+            align-items: center;
+            text-align: center;
+            background: darkkhaki;
+          }
+
+.logo {
+            grid-column: 3;
+            background-image: url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 5vh;
+          }
+
+.navLinks {
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: rgb(28, 89, 117);
+          }
+
+.navLinks:hover {
+            color: white;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+            padding: 5px 5px;
+          }
